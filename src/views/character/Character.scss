@@ -1,0 +1,65 @@
+.character-page {
+  background-size: 100% 100%;
+
+  &.rand-background-1 {
+    background-image: url('../../assets/1.jpg');
+  }
+
+  &.rand-background-2 {
+    background-image: url('../../assets/2.jpg');
+  }
+
+  &.rand-background-3 {
+    background-image: url('../../assets/3.jpg');
+  }
+
+  &.rand-background-4 {
+    background-image: url('../../assets/4.jpg');
+  }
+
+  &.rand-background-5 {
+    background-image: url('../../assets/5.jpg');
+  }
+
+  &.rand-background-6 {
+    background-image: url('../../assets/6.jpg');
+  }
+
+  &.rand-background-7 {
+    background-image: url('../../assets/7.jpg');
+  }
+
+  .character-wrapper {
+    display: flex;
+    flex-flow: row;
+    color: white;
+  }
+
+  .character-image {
+    width: 30%;
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+
+  .character-info {
+    flex: 1;
+    margin-left: 20px;
+
+    > h2 {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+
+      span {
+        margin-left: 15px;
+      }
+    }
+
+    p,
+    p .ant-tag {
+      margin-bottom: 10px;
+    }
+  }
+}

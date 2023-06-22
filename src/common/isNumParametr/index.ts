@@ -1,0 +1,1 @@
+export { isNumParametr } from './isNumParametr';
