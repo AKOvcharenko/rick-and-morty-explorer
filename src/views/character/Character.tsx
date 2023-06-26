@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import { Spin } from 'components';
 import { useGetCharacter } from 'hooks';
 import { CharacterState } from 'consts';
+import { CharacterT } from 'models/character';
 
 import './Character.scss';
 
@@ -36,7 +37,7 @@ export const Character: FC = () => {
       {data ? (
         <div className="character-wrapper">
           <div className="character-image">
-            <img src={data.image} />
+            <img alt={data.name} src={data.image} />
           </div>
           <div className="character-info">
             <h2>
@@ -55,7 +56,7 @@ export const Character: FC = () => {
             </p>
             <p className="bold">
               <span>Episodes: </span>
-              {data.episode.map(({ episode, name, id }: any) => (
+              {data.episode.map(({ episode, name, id }) => (
                 <Tag key={id} color="blue">{`${name}(${episode})`}</Tag>
               ))}
             </p>

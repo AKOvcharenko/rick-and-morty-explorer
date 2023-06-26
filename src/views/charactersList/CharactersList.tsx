@@ -68,9 +68,9 @@ export const CharactersList: FC = () => {
       }
     }, 200);
 
-    window.addEventListener('scroll', onScroll);
+    document.addEventListener('scroll', onScroll);
 
-    return () => window.removeEventListener('scroll', onScroll);
+    return () => document.removeEventListener('scroll', onScroll);
   });
 
   return (

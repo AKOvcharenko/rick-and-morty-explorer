@@ -22,40 +22,42 @@ const queryClient = new QueryClient({
 
 export const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            path={AppRouting.CHARACTERS_PAGE}
-            element={
-              <RouteParamChecker checker={isNumParametr(PAGE_ID)}>
-                <CharactersList />
-              </RouteParamChecker>
-            }
-          />
-          <Route
-            path={AppRouting.CHARACTER_PAGE}
-            element={
-              <RouteParamChecker checker={isNumParametr(CHARACTER_ID)}>
-                <Character />
-              </RouteParamChecker>
-            }
-          />
-          <Route
-            path={AppRouting.ROOT}
-            element={
-              <Navigate
-                to={generatePath(AppRouting.CHARACTERS_PAGE, {
-                  [PAGE_ID]: '1',
-                })}
-                replace={true}
-              />
-            }
-          />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </QueryClientProvider>
+    <div className="app-container">
+      <QueryClientProvider client={queryClient}>
+        <BrowserRouter>
+          <Routes>
+            <Route
+              path={AppRouting.CHARACTERS_PAGE}
+              element={
+                <RouteParamChecker checker={isNumParametr(PAGE_ID)}>
+                  <CharactersList />
+                </RouteParamChecker>
+              }
+            />
+            <Route
+              path={AppRouting.CHARACTER_PAGE}
+              element={
+                <RouteParamChecker checker={isNumParametr(CHARACTER_ID)}>
+                  <Character />
+                </RouteParamChecker>
+              }
+            />
+            <Route
+              path={AppRouting.ROOT}
+              element={
+                <Navigate
+                  to={generatePath(AppRouting.CHARACTERS_PAGE, {
+                    [PAGE_ID]: '1',
+                  })}
+                  replace={true}
+                />
+              }
+            />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </QueryClientProvider>
+    </div>
   );
 };
 

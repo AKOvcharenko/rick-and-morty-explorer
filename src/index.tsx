@@ -5,12 +5,8 @@ import './reset.css';
 import './index.css';
 import App from './App';
 
-const rootHolder = document.getElementById('root');
-
-if (rootHolder) {
-  ReactDOM.createRoot(rootHolder).render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  );
-}
+ReactDOM.createRoot(document.getElementById('root') as Element).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);

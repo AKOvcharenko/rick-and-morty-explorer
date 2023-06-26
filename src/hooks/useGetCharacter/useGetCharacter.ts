@@ -1,10 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
 import { request, gql, Variables } from 'graphql-request';
 
+import { CharacterT } from 'models/character';
 import { BASE_API_URL } from 'consts';
 
 const charactersListGraphqlQuery = gql`
-  query ExampleQuery($characterId: ID!) {
+  query Character($characterId: ID!) {
     character(id: $characterId) {
       episode {
         episode
@@ -25,13 +26,15 @@ const charactersListGraphqlQuery = gql`
 
 export const useGetCharacter = (params: Variables) => {
   return useQuery({
-    queryKey: ['character', params.id],
+    queryKey: ['character', params.characterId],
     queryFn: () =>
-      request(BASE_API_URL, charactersListGraphqlQuery, params).then(
-        ({ character }: any) => {
-          return character;
-        }
-      ),
+      request<{ character: CharacterT }>(
+        BASE_API_URL,
+        charactersListGraphqlQuery,
+        params
+      ).then(({ character }) => {
+        return character;
+      }),
     cacheTime: 0,
   });
 };
