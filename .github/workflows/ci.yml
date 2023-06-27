@@ -1,6 +1,6 @@
 name: Continuous Integration Workflow
 
-on: pull_request
+on: push
 
 defaults:
   run:
