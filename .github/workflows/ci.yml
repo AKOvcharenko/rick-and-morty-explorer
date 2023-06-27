@@ -1,0 +1,23 @@
+name: Continuous Integration Workflow
+
+on
+  pull_request
+
+defaults:
+  run:
+    shell: bash
+    working-directory: ./src
+
+jobs:
+  test:
+    name: 'Unit tests'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      name: 'Checkout repository'
+    
+    - name: 'Install dependency'
+      run: npm ci
+      
+    - name: 'Run tests'
+      run: npm run test
