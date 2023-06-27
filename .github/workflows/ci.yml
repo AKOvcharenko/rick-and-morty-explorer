@@ -1,7 +1,6 @@
 name: Continuous Integration Workflow
 
 on: push
-runs-on: ubuntu-latest
 
 defaults:
   run:
@@ -11,6 +10,7 @@ defaults:
 jobs:
   test:
     name: 'Unit tests'
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         name: 'Checkout repository'
@@ -22,6 +22,7 @@ jobs:
         run: npm run test
   lint:
     name: 'Code lint'
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         name: 'Checkout repository'
