@@ -9,18 +9,6 @@ defaults:
     working-directory: ./src
 
 jobs:
-  lint: 
-    name: 'Code lint'    
-    steps: 
-      - uses: actions/checkout@v3
-      name: 'Checkout repository'
-
-      - name: 'Install dependency'
-        run: npm ci
-
-      - name: 'Install dependency'
-      run: npm run lint
-
   test:
     name: 'Unit tests'
     steps:
@@ -32,3 +20,14 @@ jobs:
 
       - name: 'Run tests'
         run: npm run test
+  lint:
+    name: 'Code lint'
+    steps:
+      - uses: actions/checkout@v3
+        name: 'Checkout repository'
+
+      - name: 'Install dependency'
+        run: npm ci
+
+      - name: 'Install dependency'
+        run: npm run lint
