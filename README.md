@@ -4,18 +4,18 @@
 
 # Rick and Morty Explorer
 
-<p>This application implements infinity scroll integrated with "Rick and Morty" GraphQL API.</p>
-<p>It allows user to check cartoon's characters on CharactersList page and see more detailed information about selected person on CharacterPage.</p>
-<p>Application keeps scroll state in url and cache data with @tanstack/react-query.</p>
-<p>It also available as <b>akovcharenko/rick-and-morty</b> docker image in DockerHub</p>
+This application implements infinity scroll integrated with "Rick and Morty" GraphQL API.<br/>
+It allows user to check cartoon's characters on CharactersList page and see more detailed information about selected person on CharacterPage.<br/>
+Application keeps scroll state in url and cache data with @tanstack/react-query.<br/>
+It also available as <b>akovcharenko/rick-and-morty</b> docker image in DockerHub.<br/>
 
-It build with:
+### It build with:
 
 - react 18.2.0,
 - antd 5.6.1,
 - @tanstack/react-query 4.29.13
 
-CI process orginized with GH Actions:
+### CI process orginized with GH Actions:
 
 - code testing
 - code linting
