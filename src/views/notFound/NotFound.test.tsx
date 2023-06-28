@@ -1,6 +1,6 @@
 import userEvent from '@testing-library/user-event';
+import { render, screen, act } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
-import { render, screen, act, waitFor } from '@testing-library/react';
 
 import { AppRouting } from 'consts';
 import { NotFound } from './NotFound';
@@ -32,6 +32,7 @@ describe('Not Found Page', () => {
       if (link) userEvent.click(link);
     });
 
-    await waitFor(() => expect(screen.getByText('Root')).toBeInTheDocument());
+    const element = await screen.findByText('Root');
+    expect(element).toBeInTheDocument();
   });
 });

@@ -6,7 +6,6 @@ import { useParams } from 'react-router-dom';
 import { Spin } from 'components';
 import { useGetCharacter } from 'hooks';
 import { CharacterState } from 'consts';
-import { CharacterT } from 'models/character';
 
 import './Character.scss';
 

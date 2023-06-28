@@ -1,4 +1,6 @@
-import { render, waitFor, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
+
+import { elementIsVisibleInViewport } from './checkElementVisibility';
 
 const customRender = () =>
   render(
@@ -6,7 +8,6 @@ const customRender = () =>
       <p>test</p>
     </div>
   );
-import { elementIsVisibleInViewport } from './checkElementVisibility';
 
 const originalOffsetHeight = Object.getOwnPropertyDescriptor(
   HTMLElement.prototype,

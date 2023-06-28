@@ -34,8 +34,9 @@ describe('useGetCharacters', () => {
         nextPageId: response.info.next,
         prevPageId: response.info.prev,
       });
-      expect(result.current.data?.pages).toStrictEqual(fetchedPages);
     });
+
+    expect(result.current.data?.pages).toStrictEqual(fetchedPages);
 
     await result.current.fetchNextPage();
     pageId += 1;
@@ -49,7 +50,7 @@ describe('useGetCharacters', () => {
         nextPageId: response.info.next,
         prevPageId: response.info.prev,
       });
-      expect(result.current.data?.pages).toStrictEqual(fetchedPages);
     });
+    expect(result.current.data?.pages).toStrictEqual(fetchedPages);
   });
 });
