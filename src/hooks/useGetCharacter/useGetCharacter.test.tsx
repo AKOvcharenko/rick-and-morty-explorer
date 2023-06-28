@@ -26,9 +26,10 @@ describe('useGetCharacter', () => {
 
     await waitFor(() => {
       expect(result.current.data).not.toBeUndefined();
-      const response = get(character, [id, 'character']);
-      expect(result.current.data).toStrictEqual(response);
     });
+
+    let response = get(character, [id, 'character']);
+    expect(result.current.data).toStrictEqual(response);
 
     id += 1;
     rerender({ characterId: id });
@@ -39,8 +40,9 @@ describe('useGetCharacter', () => {
 
     await waitFor(() => {
       expect(result.current.isFetching).toBe(false);
-      const response = get(character, [id, 'character']);
-      expect(result.current.data).toStrictEqual(response);
     });
+
+    response = get(character, [id, 'character']);
+    expect(result.current.data).toStrictEqual(response);
   });
 });

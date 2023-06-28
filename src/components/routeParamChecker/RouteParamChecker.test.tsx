@@ -38,23 +38,23 @@ const customRender = (initialEntries: string) =>
 describe('RouteParamChecker', () => {
   it('RouteParamChecker should render component when PAGE_ID matches', () => {
     customRender('/characters/1');
-    expect(screen.queryByText(CHARACTERS_LIST_PAGE)).toBeInTheDocument();
+    expect(screen.getByText(CHARACTERS_LIST_PAGE)).toBeInTheDocument();
   });
 
   it('RouteParamChecker should render component when CHARACTER_ID matches', () => {
     customRender('/character/1');
-    expect(screen.queryByText(CHARACTER_PAGE)).toBeInTheDocument();
+    expect(screen.getByText(CHARACTER_PAGE)).toBeInTheDocument();
   });
 
   it('RouteParamChecker should make redirect to NOT_FOUND_PAGE when CHARACTER_ID do match', () => {
     customRender('/character/asd');
     expect(screen.queryByText(CHARACTER_PAGE)).toBeNull();
-    expect(screen.queryByText(NOT_FOUND_PAGE)).toBeInTheDocument();
+    expect(screen.getByText(NOT_FOUND_PAGE)).toBeInTheDocument();
   });
 
   it('RouteParamChecker should make redirect to NOT_FOUND_PAGE when PAGE_ID do match', () => {
     customRender('/characters/asd');
     expect(screen.queryByText(CHARACTERS_LIST_PAGE)).toBeNull();
-    expect(screen.queryByText(NOT_FOUND_PAGE)).toBeInTheDocument();
+    expect(screen.getByText(NOT_FOUND_PAGE)).toBeInTheDocument();
   });
 });

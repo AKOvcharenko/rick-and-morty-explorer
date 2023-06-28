@@ -32,3 +32,15 @@ jobs:
 
       - name: 'Install dependency'
         run: npm run lint
+  build:
+    name: 'Build frontend'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        name: 'Checkout repository'
+
+      - name: 'Install dependency'
+        run: npm ci
+
+      - name: 'Install dependency'
+        run: npm run build

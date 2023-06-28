@@ -1,5 +1,5 @@
 import userEvent from '@testing-library/user-event';
-import { render, screen, act, waitFor } from '@testing-library/react';
+import { act, render, screen } from '@testing-library/react';
 import { MemoryRouter, Route, Routes, generatePath } from 'react-router-dom';
 
 import { AppRouting, CharacterState } from 'consts';
@@ -32,10 +32,10 @@ const customRender = () =>
 
 describe('CharacterCard', () => {
   it('CharacterCard should render correct html', () => {
-    const { debug, container } = customRender();
+    const { container } = customRender();
     const link = container.querySelector('a');
     const img = container.querySelector('img');
-    const cardHeader = screen.queryByText(cardData.name);
+    const cardHeader = screen.getByText(cardData.name);
 
     expect(link?.getAttribute('href')).toBe(
       generatePath(AppRouting.CHARACTER_PAGE, { characterId: cardData.id })
@@ -54,8 +54,7 @@ describe('CharacterCard', () => {
       if (link) userEvent.click(link);
     });
 
-    await waitFor(() =>
-      expect(screen.getByText(CHARACTER_PAGE)).toBeInTheDocument()
-    );
+    const element = await screen.findByText(CHARACTER_PAGE);
+    expect(element).toBeInTheDocument();
   });
 });
