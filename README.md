@@ -7,7 +7,7 @@
 This application implements infinite scroll integrated with "Rick and Morty" GraphQL API.<br/>
 It allows user to check cartoon characters on Character List page and see more detailed information about selected person on Character Page.<br/>
 Application keeps scroll state in url and caches data with @tanstack/react-query.<br/>
-It also available as <b>akovcharenko/rick-and-morty</b> docker image in DockerHub. <code>docker run -p 3000:3000 akovcharenko/rick-and-morty<code><br/>
+It also available as <b>akovcharenko/rick-and-morty</b> docker image in DockerHub. <code>docker run -p 3000:3000 akovcharenko/rick-and-morty</code><br/>
 
 ### It build with:
 
