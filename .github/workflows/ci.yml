@@ -61,11 +61,14 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - id: commit
+        uses: pr-mpt/actions-commit-hash@v2
+
       - name: Build image and push to Docker Hub
         uses: docker/build-push-action@v4
         with:
           tags: |
-            akovcharenko/rick-and-morty:latest
+            akovcharenko/rick-and-morty:${{ steps.commit.outputs.short }}
           push: true
 
       - name: Image digest
