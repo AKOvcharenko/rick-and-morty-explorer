@@ -50,7 +50,7 @@ export const CharactersList: FC = () => {
   useEffectOnce(() => {
     document.querySelector(`[data-page="${pageId}"]`)?.scrollIntoView();
 
-    const onScroll: EventListener = debounce((event: Event) => {
+    const onScroll: EventListener = debounce(() => {
       const lastVisiblePageGrid = Array.from(
         document.querySelectorAll('.characters-part')
       )
