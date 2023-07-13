@@ -79,3 +79,14 @@ jobs:
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
+          deploy:
+  name: Deploy
+  needs: [test, build-and-push-docker-image] # Our tests and build-and-push must pass in order to run the deploy job
+  runs-on: ubuntu-latest
+
+  steps: 
+    - name: Deploy to production
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with:
+        service-id: ${{ secrets.SERVICE_ID }} 
+        api-key: ${{ secrets.RENDER_API_KEY }} 
