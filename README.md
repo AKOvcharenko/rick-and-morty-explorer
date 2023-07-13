@@ -15,9 +15,10 @@ It also available as <b>akovcharenko/rick-and-morty</b> docker image in DockerHu
 - antd 5.6.1,
 - @tanstack/react-query 4.29.13
 
-### CI process orginized with GH Actions:
+### CI/CD process orginized with GH Actions:
 
 - code testing
 - code linting
 - application building
 - docker image building and upload to DockerHub
+- deploy docker image from master branch to Render cloud. Latest application build available here: https://rick-and-morty-explorer.onrender.com/
