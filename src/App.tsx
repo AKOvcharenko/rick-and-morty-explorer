@@ -12,6 +12,7 @@ import { RouteParamChecker } from 'components';
 import { AppRouting, PAGE_ID, CHARACTER_ID } from 'consts';
 import { CharactersList, Character, NotFound } from 'views';
 
+alert('elo');
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
